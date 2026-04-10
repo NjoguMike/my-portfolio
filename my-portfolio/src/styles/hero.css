@@ -1,0 +1,131 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.hero-overlay {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.65),
+    rgba(10, 10, 10, 0.35)
+  );
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.hero-copy {
+  max-width: 650px;
+  color: white;
+}
+
+.hero-eyebrow {
+  margin-bottom: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.mode-toggle {
+  position: relative;
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 999px;
+  width: 160px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* buttons */
+.toggle-btn {
+  position: relative;
+  z-index: 2;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* active text */
+.toggle-btn.active {
+  color: #ffffff;
+}
+
+.toggle-indicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: calc(50% - 4px);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+
+  transition: transform 0.3s ease;
+}
+
+/* positions */
+.toggle-indicator.left {
+  transform: translateX(0%);
+}
+
+.toggle-indicator.right {
+  transform: translateX(100%);
+}
+
+/* when NOT in hero (after scroll) */
+.navbar-solid ~ * .mode-toggle,
+body.scrolled .mode-toggle {
+  background: rgba(0, 0, 0, 0.04);
+  backdrop-filter: none;
+  border: 1px solid var(--border);
+}
+
+/* text becomes dark */
+body.scrolled .toggle-btn {
+  color: var(--muted);
+}
+
+body.scrolled .toggle-btn.active {
+  color: var(--text);
+}
+
+/* indicator becomes subtle */
+body.scrolled .toggle-indicator {
+  background: rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,158 @@
+.about-section,
+.contact-section {
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  width: 90%;
+  padding: 4rem 0;
+}
+
+.about-section .narrow,
+.contact-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-panel {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  align-items: flex-start;
+}
+
+.footer {
+  padding: 2rem 0 3rem;
+  color: var(--muted);
+}
+
+.contact-section {
+  padding: 4rem 0 5rem;
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.contact-copy {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 12ch;
+  margin: 0.4rem 0 1rem;
+}
+
+.contact-text {
+  max-width: 58ch;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.contact-info {
+  background: var(--surface-2);
+  border-left: 1px solid var(--border);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.4rem;
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.contact-info-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+}
+
+.contact-info-value {
+  margin: 0;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@media (max-width: 920px) {
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-copy,
+  .contact-info {
+    padding: 2rem;
+  }
+
+  .contact-copy h2 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-section {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .contact-copy,
+  .contact-info {
+    padding: 1.5rem;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+}
