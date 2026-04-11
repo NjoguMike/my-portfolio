@@ -6,6 +6,7 @@ import AboutSection from '../components/home/AboutSection'
 import ContactCTA from '../components/home/ContactCTA'
 import Footer from '../components/layout/Footer'
 import { portfolioData } from '../data/portfolioData'
+import StatsBar from '../components/home/StatsBar'
 
 export default function HomePage() {
   const [mode, setMode] = useState('tech')
@@ -13,9 +14,10 @@ export default function HomePage() {
 
   return (
     <div className={`site-shell mode-${mode}`}>
-      <Navbar mode={mode} setMode={setMode} />
+      <Navbar />
       <main>
         <Hero mode={mode} setMode={setMode} content={content} />
+        <StatsBar content={content} />
         <AboutSection mode={mode} />
         <FeaturedCards content={content} />
         <ContactCTA mode={mode} content={content} />

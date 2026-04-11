@@ -67,15 +67,17 @@ p {
 
 .btn-primary {
   background: var(--accent);
-  color: white;
+  color: var(--accent-soft);
+  font-weight: 600;
+  font-size: .9rem;
+  transition: opacity 0.25s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
 }
 
 .btn-secondary {
   background: transparent;
   border-color: var(--border);
 }
-
-/* main {
-  position: absolute;
-  top: 0;
-} */

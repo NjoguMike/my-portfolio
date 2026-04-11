@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? "navbar-scrolled" : "navbar-top"}`}>
       <div className="container navbar-inner">
-        <div className="brand-mark">Mickey Njogu</div>
+        <div className="brand-mark">Michael Njogu</div>
 
         <nav className="nav-links">
           <a href="#about">About</a>

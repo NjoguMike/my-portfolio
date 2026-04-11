@@ -5,22 +5,27 @@ export default function FeaturedCards({ content }) {
       <div className="container">
         <div className="section-intro">
           <p className="section-label">Selected Highlights</p>
-          <h2>{content.label} Portfolio</h2>
+          <h2>{content?.label} Portfolio</h2>
         </div>
 
         <div className="card-grid">
-          {content.highlights.map((item) => (
+          {content?.highlights?.map((item) => (
             <article className="feature-card" key={item.title}>
               <img src={item.image} alt={item.title} />
-              <div className="card-category">
-                <h3>{item.title}</h3>
-                <span className="category-badge">{item.category || "Tech"}</span>
+
+              <div className="feature-card-body">
+                <div className="card-category">
+                  <h3>{item.title}</h3>
+                  <span className="category-badge">{item.category || "Tech"}</span>
+                </div>
+                <div className="card-content">
+                  <h4>{item.subtitle}</h4>
+                  <p>{item.description}</p>
+                </div>
+                <a href={item.link} target="_blank" rel="noopener noreferrer" className="card-link">
+                  View Project
+                </a>
               </div>
-              <p>{item.description}</p>
-              <br />
-              <a href={item.link} target="_blank" rel="noopener noreferrer" className="card-link">
-                View Project
-              </a>
             </article>
           ))}
         </div>

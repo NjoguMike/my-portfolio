@@ -28,6 +28,7 @@
   grid-template-columns: 1fr;
   align-items: center;
   row-gap: 1rem;
+  min-height: 500px;
 }
 
 .hero-copy {
@@ -42,15 +43,14 @@
 }
 
 .hero-copy h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  line-height: 1;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-text {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .mode-toggle {
@@ -58,7 +58,7 @@
   display: inline-flex;
   padding: 4px;
   border-radius: 999px;
-  width: 160px;
+  width: 175px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -90,7 +90,7 @@
   position: absolute;
   top: 4px;
   bottom: 4px;
-  width: calc(50% - 4px);
+  width: calc(50% - 10px);
   border-radius: 999px;
 
   background: rgba(255, 255, 255, 0.18);
@@ -128,4 +128,20 @@ body.scrolled .toggle-btn.active {
 /* indicator becomes subtle */
 body.scrolled .toggle-indicator {
   background: rgba(0, 0, 0, 0.08);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-actions .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-actions .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
