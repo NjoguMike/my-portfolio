@@ -4,7 +4,7 @@ type HighlightItem = {
   category?: string;
   subtitle?: string;
   description: string;
-  link: string;
+  link?: string;
 };
 
 type FeaturedContent = {
@@ -26,7 +26,7 @@ export default function FeaturedCards({ content }: FeaturedCardsProps) {
         </div>
 
         <div className="card-grid">
-          {content?.highlights?.map((item: HighlightItem, index: number) => (
+          {content?.highlights?.map((item, index) => (
             <article className="feature-card" key={`${item.title}-${index}`}>
               <img src={item.image} alt={item.title} />
 
@@ -41,14 +41,16 @@ export default function FeaturedCards({ content }: FeaturedCardsProps) {
                   <p>{item.description}</p>
                 </div>
 
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-link"
-                >
-                  View Project
-                </a>
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card-link"
+                  >
+                    View Project
+                  </a>
+                )}
               </div>
             </article>
           ))}
