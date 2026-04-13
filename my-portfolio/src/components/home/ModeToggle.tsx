@@ -1,7 +1,15 @@
-export default function ModeToggle({ mode, setMode }) {
+type Mode = "tech" | "wellness";
+
+type ModeToggleProps = {
+  mode: Mode;
+  setMode: React.Dispatch<React.SetStateAction<Mode>>;
+};
+
+export default function ModeToggle({ mode, setMode }: ModeToggleProps) {
   return (
     <div className="mode-toggle" role="tablist">
       <button
+        type="button"
         className={`toggle-btn ${mode === "tech" ? "active" : ""}`}
         onClick={() => setMode("tech")}
       >
@@ -9,6 +17,7 @@ export default function ModeToggle({ mode, setMode }) {
       </button>
 
       <button
+        type="button"
         className={`toggle-btn ${mode === "wellness" ? "active" : ""}`}
         onClick={() => setMode("wellness")}
       >

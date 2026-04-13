@@ -99,3 +99,28 @@
   margin: 0.2rem 0 0;
   color: #fca5a5;
 }
+
+@media (max-width: 600px) {
+  .contact-modal-overlay {
+    /* Change from center to start to prevent keyboard overlap issues */
+    align-items: flex-start; 
+    overflow-y: auto; /* Allow scrolling if the modal is taller than the screen */
+    padding: 1rem;
+  }
+
+  .contact-modal {
+    margin-top: 2rem; /* Give some space at the top */
+    padding: 1.25rem; /* Slightly tighter padding for more screen real estate */
+  }
+
+  .contact-modal h3 {
+    font-size: 1.5rem; /* Prevent the headline from wrapping awkwardly */
+  }
+
+  /* Increase close button hit area for thumbs */
+  .contact-close {
+    padding: 10px;
+    top: 0.4rem;
+    right: 0.4rem;
+  }
+}

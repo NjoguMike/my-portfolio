@@ -56,13 +56,18 @@
 .mode-toggle {
   position: relative;
   display: inline-flex;
+  align-items: center;
   padding: 4px;
   border-radius: 999px;
-  width: 175px;
+  
+  /* FLUID CHANGES */
+  width: 100%;          
+  max-width: 280px;       
+  min-width: 160px;       
+  
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -70,15 +75,16 @@
 .toggle-btn {
   position: relative;
   z-index: 2;
-  padding: 0.45rem 1.2rem;
-  border-radius: 999px;
-  background: transparent;
-  border: none;
   cursor: pointer;
-
-  color: var(--surface);
+  border: none;
+  background: transparent;
   font-weight: 500;
   transition: color 0.3s ease;
+  color: var(--surface);
+  flex: 1;              
+  padding: 0.6rem 0.5rem; 
+  text-align: center;
+  font-size: 0.9rem;     
 }
 
 /* active text */
@@ -88,15 +94,14 @@
 
 .toggle-indicator {
   position: absolute;
+  z-index: 1;
   top: 4px;
   bottom: 4px;
-  width: calc(50% - 10px);
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px);
-
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: calc(50% - 4px); 
+  left: 4px;              
 }
 
 /* positions */
@@ -108,7 +113,6 @@
   transform: translateX(100%);
 }
 
-/* when NOT in hero (after scroll) */
 .navbar-solid ~ * .mode-toggle,
 body.scrolled .mode-toggle {
   background: rgba(0, 0, 0, 0.04);
@@ -144,4 +148,26 @@ body.scrolled .toggle-indicator {
 
 .hero-actions .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 600px) {
+  .hero-copy h1 {
+    font-size: 1.85rem; 
+  }
+
+  .hero-grid {
+    min-height: auto; /
+    padding: 2rem 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column; 
+    width: 100%;
+  }
+
+  .hero-actions .btn, 
+  .mode-toggle {
+    width: 100%; 
+    justify-content: center;
+  }
 }

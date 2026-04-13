@@ -1,10 +1,19 @@
 import ModeToggle from './ModeToggle';
 import hero_background from '../../assets/images/hero_background.png';
+import type { PortfolioSection } from '../../types/portfolioData';
 
-export default function Hero({ mode, setMode, content }) {
+type Mode = "tech" | "wellness";
+
+type HeroProps = {
+  mode: Mode;
+  setMode: React.Dispatch<React.SetStateAction<Mode>>;
+  content: PortfolioSection;
+};
+
+export default function Hero({ mode, setMode, content }: HeroProps) {
   return (
     <section
-      id='hero'
+      id="hero"
       className="hero-section"
       style={{ backgroundImage: `url(${hero_background})` }}
     >

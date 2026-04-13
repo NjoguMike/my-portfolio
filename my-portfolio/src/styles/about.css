@@ -210,9 +210,11 @@
   }
 
   .about-visual-decor {
-    position: static;
-    margin-top: 1rem;
-    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1rem; /* Hang it slightly off the bottom edge for a layered look */
+    width: 90%;
+    justify-content: center;
   }
 
   .about-visual {

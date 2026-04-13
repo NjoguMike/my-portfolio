@@ -1,3 +1,5 @@
+import type { PortfolioData } from '../types/portfolioData'
+
 import mobility_wellness from '../assets/images/mobility_exercise.png'
 import wellness_mindfulness from '../assets/images/wellness_mindfulness.png'
 import ergonomics from '../assets/images/ergonomics_hydration.png'
@@ -5,7 +7,7 @@ import code_setup from '../assets/images/code_setup.png'
 import tech_algorithm from '../assets/images/tech_algorithm.png'
 import tech_wellness_analytics from '../assets/images/tech_wellness_analytics.png'
 
-export const portfolioData = {
+export const portfolioData: PortfolioData = {
   tech: {
     label: 'Tech',
     eyebrow: 'Software Engineer • Builder • Problem Solver',
@@ -25,39 +27,40 @@ export const portfolioData = {
         title: 'Scalable Web Applications',
         subtitle: 'Web Apps · AI Integration · Backend Engineering',
         description: 'Frontend and backend systems built for performance, structure, and scalability.',
-        link:"",
+        link: "",
         image: code_setup,
       },
       {
         title: 'Algorthimic & Structured Engineering',
         subtitle: 'Prototyping · Service Management · Containerization',
         description: 'Proper project planning, reliable backend structuring, clean data handling, and maintainable service architecture.',
-        link:"",
+        link: "",
         image: tech_algorithm,
       },
       {
         title: 'Product Thinking',
         subtitle: 'Service Maintenance · Product Development · MultiSystem Integration',
         description: 'A technical approach shaped by usability, business goals, and long-term sustainability.',
-        link:"",
+        link: "",
         image: tech_wellness_analytics,
       }
     ],
-    stats:[
-        {
-          label: "Years of Experience",
-          value: "+5",
-        },
-        {
-          label: "No. of Projects",
-          value: "6",
-        },
-        {
-          label: "Users Impacted",
-          value: "+500K"
-        }
+    stats: [
+      {
+        label: "Years of Experience",
+        value: "+5",
+      },
+      {
+        label: "No. of Projects",
+        value: "6",
+      },
+      {
+        label: "Users Impacted",
+        value: "+500K"
+      }
     ]
   },
+
   wellness: {
     label: 'Wellness',
     eyebrow: 'Sport Scientist • Performance Coach • Wellness Expert',
@@ -69,7 +72,7 @@ export const portfolioData = {
       headline: "Ready to\nElevate Your\nPerformance\nPerformance?",
       sub: "Whether you're an executive, athlete, or organization — together let's design a system that creates a lasting impact on your health and performance.",
       cta: 'View Gallery',
-      primary:'Book a Session',
+      primary: 'Book a Session',
       secondary: 'View Gallery',
     },
     highlights: [
@@ -92,19 +95,19 @@ export const portfolioData = {
         image: ergonomics
       }
     ],
-    stats:[
-        {
-          label: "Years of Coaching",
-          value: "+8",
-        },
-        {
-          label: "Clients Transformed",
-          value: "+5K",
-        },
-        {
-          label: "Corporate Programs Delivered",
-          value: "+6"
-        }
+    stats: [
+      {
+        label: "Years of Coaching",
+        value: "+8",
+      },
+      {
+        label: "Clients Transformed",
+        value: "+5K",
+      },
+      {
+        label: "Corporate Programs Delivered",
+        value: "+6"
+      }
     ]
   }
-}
+};

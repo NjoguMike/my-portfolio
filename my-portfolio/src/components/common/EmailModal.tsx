@@ -1,8 +1,13 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-export default function EmailModal({ isOpen, onClose }) {
-  const formRef = useRef(null);
+type EmailModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
+
+export default function EmailModal({ isOpen, onClose }: EmailModalProps) {
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState({
     success: "",
@@ -11,10 +16,19 @@ export default function EmailModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
     setStatus({ success: "", error: "" });
+
+    if (!formRef.current) {
+      setStatus({
+        success: "",
+        error: "Form not ready. Please try again.",
+      });
+      setIsSending(false);
+      return;
+    }
 
     try {
       await emailjs.sendForm(
@@ -33,8 +47,7 @@ export default function EmailModal({ isOpen, onClose }) {
 
       formRef.current.reset();
     } catch (error) {
-      console.error("Email sending error:", error);
-
+      console.error("EmailJS error:", error);
       setStatus({
         success: "",
         error: "Failed to send message. Please try again.",
@@ -45,10 +58,15 @@ export default function EmailModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="contact-modal-overlay"   onClick={() => {if (!isSending) onClose();}}>
+    <div
+      className="contact-modal-overlay"
+      onClick={() => {
+        if (!isSending) onClose();
+      }}
+    >
       <div
         className="contact-modal"
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="contact-modal-title"
@@ -56,7 +74,9 @@ export default function EmailModal({ isOpen, onClose }) {
         <button
           type="button"
           className="contact-close"
-            onClick={() => {if (!isSending) onClose();}}
+          onClick={() => {
+            if (!isSending) onClose();
+          }}
           aria-label="Close contact form"
         >
           ×
@@ -68,15 +88,8 @@ export default function EmailModal({ isOpen, onClose }) {
         <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
           <input
             type="text"
-            name="name"
+            name="from_name"
             placeholder="Your name"
-            required
-          />
-
-          <input
-            type="text"
-            name="title"
-            placeholder="Your title"
             required
           />
 
@@ -98,13 +111,8 @@ export default function EmailModal({ isOpen, onClose }) {
             {isSending ? "Sending..." : "Send Message"}
           </button>
 
-          {status.success ? (
-            <p className="form-success">{status.success}</p>
-          ) : null}
-
-          {status.error ? (
-            <p className="form-error">{status.error}</p>
-          ) : null}
+          {status.success && <p className="form-success">{status.success}</p>}
+          {status.error && <p className="form-error">{status.error}</p>}
         </form>
       </div>
     </div>
