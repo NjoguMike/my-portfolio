@@ -80,18 +80,21 @@ export const portfolioData: PortfolioData = {
         title: 'Corporate Wellness',
         subtitle: 'Ergonomics · Work - Life Balance · Peak Performance',
         description: 'Professional wellness experiences designed to improve individual/team energy, focus, and productivity both at home and in the office.',
+        link:"",
         image: wellness_mindfulness
       },
       {
         title: 'Mobility & Performance',
         subtitle: 'Functional Movement · Stetches · Strength Training',
         description: 'Simple, effective exercises that support body strength, movement quality, and sustainable progress.',
+        link:"",
         image: mobility_wellness
       },
       {
         title: 'Holistic Wellbeing',
         subtitle: 'Assessments · Bespoke Programs · Nutrition',
         description: 'Practical support tailored to everyday routines, fitness goals, and enhancing performance.',
+        link:"",
         image: ergonomics
       }
     ],
