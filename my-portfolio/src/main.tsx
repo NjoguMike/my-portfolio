@@ -8,6 +8,7 @@ import './styles/hero.css'
 import './styles/cards.css'
 import './styles/sections.css'
 import './styles/about.css'
+import './styles/modals.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

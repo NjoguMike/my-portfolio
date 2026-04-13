@@ -33,7 +33,7 @@
 
 .hero-copy {
   max-width: 650px;
-  color: white;
+  color: var(--surface-2);
 }
 
 .hero-eyebrow {
@@ -76,14 +76,14 @@
   border: none;
   cursor: pointer;
 
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--surface);
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 /* active text */
 .toggle-btn.active {
-  color: #ffffff;
+  color: var(--surface);
 }
 
 .toggle-indicator {

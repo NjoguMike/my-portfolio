@@ -1,7 +1,7 @@
-import { LuCircleCheck } from "react-icons/lu";
-import card_hero from '../../assets/images/card_hero.png'
+import { LuCircleCheckBig } from "react-icons/lu";
+import card_hero from '../../assets/images/card_hero.jpg'
 
-export default function AboutSection({ mode }) {
+export default function AboutSection() {
   return (
     <section className="about-section" id="about">
       <div className="container about-grid">
@@ -41,7 +41,7 @@ export default function AboutSection({ mode }) {
 
           <div className="about-visual-decor about-visual-decor-1">
             <span className="about-visual-icon">
-              <LuCircleCheck />
+              <LuCircleCheckBig />
             </span>
 
             <span className="about-visual-text">

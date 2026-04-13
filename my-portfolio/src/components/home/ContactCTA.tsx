@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { LuClock, LuMail, LuMapPin } from "react-icons/lu";
+import EmailModal from "../common/EmailModal";
 
-export default function ContactCTA({ mode, content }) {
+export default function ContactCTA({ content }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <section className="contact-section" id="contact">
       <div className="container">
@@ -11,9 +15,9 @@ export default function ContactCTA({ mode, content }) {
             <p className="contact-text">{content.secondaryCta.sub}</p>
 
             <div className="contact-actions">
-              <a href="mailto:mikeynjogu@gmail.com" className="btn btn-primary">
-                {content.secondaryCta.cta}
-              </a>
+              <button className="btn btn-primary" onClick={() => setOpen(true)}>
+                {content.secondaryCta.primary}
+              </button>
 
               <a href="#" className="btn btn-secondary">
                 {content.secondaryCta.secondary}
@@ -54,6 +58,7 @@ export default function ContactCTA({ mode, content }) {
           </div>
         </div>
       </div>
+      <EmailModal isOpen={open} onClose={() => setOpen(false)} />
     </section>
   );
 }

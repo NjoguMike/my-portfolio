@@ -67,7 +67,7 @@ p {
 
 .btn-primary {
   background: var(--accent);
-  color: var(--accent-soft);
+  color: var(--surface);
   font-weight: 600;
   font-size: .9rem;
   transition: opacity 0.25s ease;

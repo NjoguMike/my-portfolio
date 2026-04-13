@@ -18,9 +18,9 @@ export default function HomePage() {
       <main>
         <Hero mode={mode} setMode={setMode} content={content} />
         <StatsBar content={content} />
-        <AboutSection mode={mode} />
+        <AboutSection />
         <FeaturedCards content={content} />
-        <ContactCTA mode={mode} content={content} />
+        <ContactCTA content={content} />
       </main>
       <Footer />
     </div>
