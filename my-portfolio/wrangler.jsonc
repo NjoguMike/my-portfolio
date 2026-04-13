@@ -1,0 +1,9 @@
+{
+  "name": "my-portfolio",
+  "compatibility_date": "2026-04-14",
+
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  }
+}
