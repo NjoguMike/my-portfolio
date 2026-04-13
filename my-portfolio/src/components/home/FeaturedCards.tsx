@@ -1,19 +1,7 @@
-type HighlightItem = {
-  title: string;
-  image: string;
-  category?: string;
-  subtitle?: string;
-  description: string;
-  link?: string;
-};
-
-type FeaturedContent = {
-  label?: string;
-  highlights?: HighlightItem[];
-};
+import type { PortfolioSection } from "../../types/portfolioData";
 
 type FeaturedCardsProps = {
-  content?: FeaturedContent;
+  content?: PortfolioSection;
 };
 
 export default function FeaturedCards({ content }: FeaturedCardsProps) {
