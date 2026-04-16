@@ -5,8 +5,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navbarRef = useRef(null);
-  const toggleBtnRef = useRef(null);
+  const navbarRef = useRef<HTMLElement | null>(null);
+  const toggleBtnRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,14 +33,14 @@ export default function Navbar() {
   useEffect(() => {
     if (!menuOpen) return;
 
-    const handleClickOutside = (event) => {
-      const target = event.target;
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
 
       const clickedInsideNavbar =
-        navbarRef.current && navbarRef.current.contains(target);
+        navbarRef.current?.contains(target) ?? false;
 
       const clickedToggle =
-        toggleBtnRef.current && toggleBtnRef.current.contains(target);
+        toggleBtnRef.current?.contains(target) ?? false;
 
       if (!clickedInsideNavbar && !clickedToggle) {
         setMenuOpen(false);
@@ -54,7 +54,7 @@ export default function Navbar() {
     };
   }, [menuOpen]);
 
-  const handleToggleMenu = (event) => {
+  const handleToggleMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     setMenuOpen((prev) => !prev);
   };

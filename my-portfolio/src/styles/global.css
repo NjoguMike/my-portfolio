@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
   font-family: Inter, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  /* scrollbar-width: none; */
 }
 
 a {
