@@ -29,16 +29,17 @@ export default function FeaturedCards({ content }: FeaturedCardsProps) {
                   <p>{item.description}</p>
                 </div>
 
-                {item.link && (
-                  <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="card-link"
-                  >
-                    View Project
-                  </a>
-                )}
+                <a
+                  href={item.link || "#"}
+                  target={item.link ? "_blank" : undefined}
+                  rel={item.link ? "noopener noreferrer" : undefined}
+                  className={`card-link ${!item.link ? "disabled" : ""}`}
+                  onClick={(e) => {
+                    if (!item.link) e.preventDefault();
+                  }}
+                >
+                  View Project
+                </a>
               </div>
             </article>
           ))}

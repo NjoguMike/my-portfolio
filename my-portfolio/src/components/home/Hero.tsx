@@ -30,9 +30,14 @@ export default function Hero({ mode, setMode, content }: HeroProps) {
               <a href="#work" className="btn btn-primary">
                 {content.primaryCta}
               </a>
-              <a href="#contact" className="btn btn-secondary">
-                {content.secondaryCta.cta}
-              </a>
+              {mode === "tech" ?
+                <a href="/Njogu_Michael_Resume.pdf" download className="btn btn-secondary">
+                  {content.secondaryCta.cta}
+                </a> :
+                <a href="#gallery" className="btn btn-secondary">
+                  {content.secondaryCta.cta}
+                </a>
+              }
             </div>
           </div>
         </div>
