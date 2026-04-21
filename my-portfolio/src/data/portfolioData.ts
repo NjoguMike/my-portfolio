@@ -1,4 +1,4 @@
-import type { PortfolioData } from '../types/portfolioData'
+import type { LandingPageData } from '../types/portfolioData'
 
 import mobility_wellness from '../assets/images/mobility_exercise.png'
 import wellness_mindfulness from '../assets/images/wellness_mindfulness.png'
@@ -6,7 +6,37 @@ import ergonomics from '../assets/images/ergonomics_hydration.png'
 import code_setup from '../assets/images/code_setup.png'
 import tech_algorithm from '../assets/images/tech_algorithm.png'
 import tech_wellness_analytics from '../assets/images/tech_wellness_analytics.png'
+import tech_hero from '../assets/images/tech_hero.png'
+import all_wellness from '../assets/images/all_wellness.png'
 
+export const gatewayData: LandingPageData = {
+  hero: {
+    eyebrow: "Software Engineer | Creator | Wellness Expert",
+    heading: "Two Sides of the Same Coin. One Purpose.",
+    subheading: "I operate at the intersection of two disciplines most people treat as separate — precision software engineering and evidence-based human performance."
+  },
+  cards: [
+    {
+      id: "tech",
+      title: "Software Engineer",
+      subtitle: "Systems • APIs • Scalable Digital Solutions",
+      description: "I build scalable digital systems with real-world impact.",
+      card_image: tech_hero,
+      primaryCta: "Explore Tech Portfolio",
+      route: "/tech"
+    },
+    {
+      id: "wellness",
+      title: "Sport Scientist",
+      subtitle: "Holistic Wellbeing • Corporate Wellness • Functional Human Development",
+      description: "I help individuls and teams improve movement, performance and health.",
+      card_image: all_wellness,
+      primaryCta: "Explore Wellness Portfolio",
+      route: "/wellness"
+    },
+  ]
+}
+ 
 export const portfolioData: PortfolioData = {
   tech: {
     label: 'Tech',

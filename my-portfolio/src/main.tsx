@@ -9,6 +9,7 @@ import './styles/cards.css'
 import './styles/sections.css'
 import './styles/about.css'
 import './styles/modals.css'
+import './styles/landingPage.css'
 
 const rootElement = document.getElementById("root");
 

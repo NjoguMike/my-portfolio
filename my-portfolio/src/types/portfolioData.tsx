@@ -1,38 +1,22 @@
-export type HighlightItem = {
-  title: string;
-  subtitle?: string;
-  description: string;
-  link?: string;
-  image: string;
-  category?: string;
-};
+export type LandingPagePaths = 'tech' | 'wellness'
 
-export type StatItem = {
-  label: string;
-  value: string;
-};
-
-export type SecondaryCTA = {
-  eyebrow: string;
-  headline: string;
-  sub: string;
-  cta: string;
-  primary: string;
-  secondary: string;
-};
-
-export type PortfolioSection = {
-  label: string;
+export type LandingHero = {
   eyebrow: string;
   heading: string;
-  text: string;
-  primaryCta: string;
-  secondaryCta: SecondaryCTA;
-  highlights: HighlightItem[];
-  stats: StatItem[];
-};
+  subheading: string;
+}
 
-export type PortfolioData = {
-  tech: PortfolioSection;
-  wellness: PortfolioSection;
+export type CardsContent = {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  card_image: string;
+  primaryCta: string;
+  route: string;
+}
+
+export type LandingPageData = {
+  hero: LandingHero;
+  cards: CardsContent[];
 };
