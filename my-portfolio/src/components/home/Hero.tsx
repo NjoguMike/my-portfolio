@@ -1,16 +1,6 @@
-import ModeToggle from './ModeToggle';
 import hero_background from '../../assets/images/hero_background.png';
-import type { PortfolioSection } from '../../types/portfolioData';
 
-type Mode = "tech" | "wellness";
-
-type HeroProps = {
-  mode: Mode;
-  setMode: React.Dispatch<React.SetStateAction<Mode>>;
-  content: PortfolioSection;
-};
-
-export default function Hero({ mode, setMode, content }: HeroProps) {
+export default function Hero({ mode, content }: { mode: string; content: any }) {
   return (
     <section
       id="hero"
@@ -19,7 +9,6 @@ export default function Hero({ mode, setMode, content }: HeroProps) {
     >
       <div className="hero-overlay">
         <div className="container hero-grid">
-          <ModeToggle mode={mode} setMode={setMode} />
 
           <div className="hero-copy">
             <p className="hero-eyebrow">{content.eyebrow}</p>

@@ -1,20 +1,18 @@
-import type { PortfolioSection } from "../../types/portfolioData";
 
-type FeaturedCardsProps = {
-  content?: PortfolioSection;
-};
+export default function FeaturedCards({ content } : { content : any }) {
 
-export default function FeaturedCards({ content }: FeaturedCardsProps) {
+  // console.log(content)
+
   return (
     <section className="featured-section" id="work">
       <div className="container">
         <div className="section-intro">
           <p className="section-label">Selected Highlights</p>
-          <h2>{content?.label ? `${content.label} Portfolio` : "Featured Portfolio"}</h2>
+          <h2>{content?.section?.label}</h2>
         </div>
 
         <div className="card-grid">
-          {content?.highlights?.map((item, index) => (
+          {content?.highlights?.map(( item : any, index: number) => (
             <article className="feature-card" key={`${item.title}-${index}`}>
               <img src={item.image} alt={item.title} />
 

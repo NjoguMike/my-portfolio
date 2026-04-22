@@ -1,4 +1,4 @@
-import type { LandingPageData } from '../types/portfolioData'
+import type { LandingPageData, PortfolioSectionData } from '../types/portfolioData'
 
 import mobility_wellness from '../assets/images/mobility_exercise.png'
 import wellness_mindfulness from '../assets/images/wellness_mindfulness.png'
@@ -37,20 +37,22 @@ export const gatewayData: LandingPageData = {
   ]
 }
  
-export const portfolioData: PortfolioData = {
+export const portfolioData: PortfolioSectionData = {
   tech: {
-    label: 'Tech',
-    eyebrow: 'Software Engineer • Builder • Problem Solver',
-    heading: 'I build scalable digital systems with real-world impact.',
-    text: 'From simple Frontends, to RESTful APIs, to complex product architecture. I create practical solutions that balance performance, usability, and long-term maintainability.',
-    primaryCta: 'View Projects',
-    secondaryCta: {
-      eyebrow: 'Open to Opportunities',
-      headline: "Let's Build\nRemarkable Things\nTogether.",
-      sub: "Whether you're scaling a product, launching a startup, or need an engineering partner — I'm the person to call.",
-      cta: 'Download Resume',
-      primary: 'Start a Conversation',
-      secondary: 'View LinkedIn',
+    section: {
+      label: 'Tech',
+      eyebrow: 'Software Engineer • Builder • Problem Solver',
+      heading: 'I build scalable digital systems with real-world impact.',
+      text: 'From simple Frontends, to RESTful APIs, to complex product architecture. I create practical solutions that balance performance, usability, and long-term maintainability.',
+      primaryCta: 'View Projects',
+      secondaryCta: {
+        eyebrow: 'Open to Opportunities',
+        headline: "Let's Build\nRemarkable Things\nTogether.",
+        sub: "Whether you're scaling a product, launching a startup, or need an engineering partner — I'm the person to call.",
+        cta: 'Download Resume',
+        primary: 'Start a Conversation',
+        secondary: 'View LinkedIn',
+      },
     },
     highlights: [
       {
@@ -92,18 +94,20 @@ export const portfolioData: PortfolioData = {
   },
 
   wellness: {
-    label: 'Wellness',
-    eyebrow: 'Sport Scientist • Performance Coach • Wellness Expert',
-    heading: 'I help individuls and teams improve movement, performance and health.',
-    text: 'My training model blends functional movement, strength training, workplace wellness, and practical performance strategies designed for individuals and organizations.',
-    primaryCta: 'Explore Services',
-    secondaryCta: {
-      eyebrow: 'Book a Consultation',
-      headline: "Ready to\nElevate Your\nPerformance\nPerformance?",
-      sub: "Whether you're an executive, athlete, or organization — together let's design a system that creates a lasting impact on your health and performance.",
-      cta: 'View Gallery',
-      primary: 'Book a Session',
-      secondary: 'View Gallery',
+    section: {
+      label: 'Wellness',
+      eyebrow: 'Sport Scientist • Performance Coach • Wellness Expert',
+      heading: 'I help individuls and teams improve movement, performance and health.',
+      text: 'My training model blends functional movement, strength training, workplace wellness, and practical performance strategies designed for individuals and organizations.',
+      primaryCta: 'Explore Services',
+      secondaryCta: {
+        eyebrow: 'Book a Consultation',
+        headline: "Ready to\nElevate Your\nPerformance\nPerformance?",
+        sub: "Whether you're an executive, athlete, or organization — together let's design a system that creates a lasting impact on your health and performance.",
+        cta: 'View Gallery',
+        primary: 'Book a Session',
+        secondary: 'View Gallery',
+      },
     },
     highlights: [
       {

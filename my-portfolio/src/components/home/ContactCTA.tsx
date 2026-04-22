@@ -1,13 +1,8 @@
 import { useState } from "react";
 import { LuClock, LuMail, LuMapPin } from "react-icons/lu";
 import EmailModal from "../common/EmailModal";
-import type { PortfolioSection } from "../../types/portfolioData";
 
-type ContactCTAProps = {
-  content: PortfolioSection;
-};
-
-export default function ContactCTA({ content }: ContactCTAProps) {
+export default function ContactCTA({ content }: { content : any}) {
   const [open, setOpen] = useState(false);
 
   return (
