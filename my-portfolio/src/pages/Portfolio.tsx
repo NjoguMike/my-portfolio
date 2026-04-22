@@ -19,7 +19,6 @@ function Portfolio() {
   }
 
   const content = portfolioData[path]
-  // console.log(content)
 
   return (
     <div className={`site-shell mode-${path}`}>
